@@ -1,8 +1,26 @@
+html {
+    scroll-behavior: smooth;
+}
 ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
 
+}
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.skills-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.skills-list img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 nav ul{
         display: flex;
@@ -52,7 +70,20 @@ body {
     max-width: 900px;
     margin: auto;
     padding: 20px;
-/}
+}
+#music {
+    text-align: center;
+    margin: 40px 0;
+}
+#music button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none ;
+    border-radius: 8px ;
+    background-color: #007acc;
+    color: white;
+    cursor: pointer;
+}
 header  {
     text-align: center;
     font-size: 2rem 1rem;
@@ -122,7 +153,7 @@ footer {
         font-size: 1rem;
     }
     nav ul {
-        flex-direction: column ;
+        display: flex;
         gap: 10px;
     }
     section h2 {
@@ -141,6 +172,7 @@ footer {
         font-size: 1.5rem;
     }
     nav ul {
+        display: flex;
         gap: 8px;
     }
     nav a  {
