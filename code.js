@@ -2,18 +2,25 @@ function toggleDarkMode(){
     document.body.classList.toggle('dark-mode');
 }
 const audio = document.getElementById("bg-music");
-const toggleBtn = document.getElementById("toggleMusic");
-toggleBtn.addEventListener("click",function() {
-    if (audio.paused) {
-       audio.play().then(() => {
-        toggleBtn.textContent = "Pause Background Music";
-    }).catch((error) => {
-        alert("playback failed.try tapping again");
-        console.log(error);
-    });
-} else{
+const btn = document.getElementById("toggleMusic");
+let isPlaying = false;
+btn.addEventListener("touchstart",toggleMusic); 
+btn.addEventListener("click",toggleMusic);
+function toggleMusic() {
+    if (!isPlaying) {
+        audio.play().then(() => {
+            isPlaying = true;
+            btn.textContent = "Pause Background Music";
+        }).catch ((err)  => {
+        alert("playback failed.try tapping again.");
+        console.error("playback failed:",err);
+    }); 
+} else {
     audio.pause();
-    toggleBtn.textContent ="Play Background Music";
+    isPlaying = false
+    btn.textContent ="Play Background Music";
 }
-});
+}
+
+    
     
